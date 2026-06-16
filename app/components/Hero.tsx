@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden pt-16">
@@ -13,29 +17,49 @@ export default function Hero() {
           {/* Left: copy */}
           <div className="flex flex-col gap-8">
             {/* Badge */}
-            <div className="inline-flex w-fit items-center gap-2 px-3 py-1.5 rounded-full border border-[#16EC06]/30 bg-[#16EC06]/10 text-[#16EC06] text-xs font-semibold uppercase tracking-widest">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="inline-flex w-fit items-center gap-2 px-3 py-1.5 rounded-full border border-[#16EC06]/30 bg-[#16EC06]/10 text-[#16EC06] text-xs font-semibold uppercase tracking-widest"
+            >
               <span className="w-1.5 h-1.5 rounded-full bg-[#16EC06] animate-pulse" />
               iOS App — Free Download
-            </div>
+            </motion.div>
 
             {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]"
+            >
               Your health data.{" "}
               <br />
               <span className="bg-gradient-to-r from-[#16EC06] to-[#7BA0FF] bg-clip-text text-transparent">
                 Finally decoded.
               </span>
-            </h1>
+            </motion.h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-lg">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-lg"
+            >
               Import your Apple Health export and unlock your recovery score,
               strain, sleep quality, and HRV trends — all processed privately
               on your device.
-            </p>
+            </motion.p>
 
             {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
               <a
                 href="#download"
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-base font-semibold bg-[#16EC06] text-black hover:bg-[#00cc00] transition-all duration-200 shadow-xl shadow-[#16EC06]/30 hover:shadow-[#16EC06]/50 hover:-translate-y-0.5"
@@ -48,18 +72,32 @@ export default function Hero() {
               >
                 See How It Works
               </a>
-            </div>
+            </motion.div>
 
             {/* Trust line */}
-            <p className="text-sm text-zinc-600">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-sm text-zinc-600"
+            >
               Free forever · No account required · All data stays on your device
-            </p>
+            </motion.p>
           </div>
 
           {/* Right: Recovery ring mock */}
-          <div className="relative flex justify-center lg:justify-end">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative flex justify-center lg:justify-end"
+          >
             {/* Outer glow */}
-            <div className="absolute inset-0 bg-[#16EC06]/10 blur-3xl rounded-3xl" />
+            <motion.div
+              className="absolute inset-0 bg-[#16EC06]/10 blur-3xl rounded-3xl"
+              animate={{ opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
 
             <div className="relative w-full max-w-md bg-[#111111] border border-[#2a2a2a] rounded-2xl shadow-2xl overflow-hidden p-6 flex flex-col gap-6">
               {/* Header row */}
@@ -76,7 +114,11 @@ export default function Hero() {
 
               {/* Recovery Ring */}
               <div className="flex flex-col items-center gap-4">
-                <div className="relative w-44 h-44">
+                <motion.div
+                  className="relative w-44 h-44"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
                   {/* Glow behind ring */}
                   <div className="absolute inset-0 rounded-full" style={{ boxShadow: "0 0 40px rgba(22,236,6,0.25)" }} />
                   <svg viewBox="0 0 180 180" className="w-full h-full -rotate-90">
@@ -107,7 +149,7 @@ export default function Hero() {
                     <span className="text-4xl font-extrabold text-white">78%</span>
                     <span className="text-xs text-zinc-500 uppercase tracking-wider mt-0.5">Recovery</span>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Mini rings row */}
                 <div className="flex items-center gap-6">
@@ -172,7 +214,7 @@ export default function Hero() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

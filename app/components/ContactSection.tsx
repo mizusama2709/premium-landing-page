@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import AnimateIn from "./AnimateIn";
 
 interface FormState {
   name: string;
@@ -44,7 +45,7 @@ export default function ContactSection() {
 
   return (
     <section className="w-full bg-zinc-900 py-20 px-6">
-      <div className="mx-auto max-w-xl">
+      <AnimateIn direction="up" className="mx-auto max-w-xl">
         <h2 className="text-3xl font-semibold tracking-tight text-white mb-2">Get in touch</h2>
         <p className="text-zinc-400 mb-10">We&apos;d love to hear from you. Fill out the form and we&apos;ll respond shortly.</p>
 
@@ -107,7 +108,7 @@ export default function ContactSection() {
             </p>
           )}
         </form>
-      </div>
+      </AnimateIn>
     </section>
   );
 }

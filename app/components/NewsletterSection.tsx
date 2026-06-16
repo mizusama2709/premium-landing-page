@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import AnimateIn from "./AnimateIn";
 
 type Status =
   | { type: "idle" }
@@ -38,7 +39,7 @@ export default function NewsletterSection() {
 
   return (
     <section className="w-full bg-zinc-900 border-t border-zinc-800 py-20 px-6">
-      <div className="mx-auto max-w-xl text-center">
+      <AnimateIn direction="up" className="mx-auto max-w-xl text-center">
         <h2 className="text-3xl font-semibold tracking-tight text-white mb-3">Stay in the loop</h2>
         <p className="text-zinc-400 mb-8">Get product updates, tips, and early access to new features.</p>
 
@@ -74,7 +75,7 @@ export default function NewsletterSection() {
             {status.message}
           </p>
         )}
-      </div>
+      </AnimateIn>
     </section>
   );
 }

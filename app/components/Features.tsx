@@ -1,4 +1,8 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { motion } from "framer-motion";
+import AnimateIn from "./AnimateIn";
 
 interface Feature {
   icon: ReactNode;
@@ -78,7 +82,7 @@ export default function Features() {
     <section id="features" className="bg-[#0a0a0a] py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-16">
+        <AnimateIn className="flex flex-col items-center text-center gap-4 mb-16">
           <span className="text-xs font-semibold uppercase tracking-widest text-[#16EC06]">
             Features
           </span>
@@ -89,31 +93,36 @@ export default function Features() {
             Six powerful views. One beautiful dashboard. All on your device —
             no account, no subscription, no server.
           </p>
-        </div>
+        </AnimateIn>
 
         {/* Feature grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group relative bg-[#111111] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-4 hover:border-[#16EC06]/50 hover:bg-[#111111]/80 transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* Hover glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#16EC06]/5 to-[#7BA0FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          {features.map((feature, index) => (
+            <AnimateIn key={feature.title} delay={index * 0.1}>
+              <motion.div
+                className="group relative bg-[#111111] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-4 hover:border-[#16EC06]/50 hover:bg-[#111111]/80 transition-all duration-300"
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              >
+                {/* Hover glow */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#16EC06]/5 to-[#7BA0FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-              {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#16EC06]/10 border border-[#16EC06]/20 text-[#16EC06] group-hover:bg-[#16EC06]/20 group-hover:text-[#16EC06] transition-colors duration-300">
-                {feature.icon}
-              </div>
+                {/* Icon */}
+                <motion.div
+                  className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#16EC06]/10 border border-[#16EC06]/20 text-[#16EC06] group-hover:bg-[#16EC06]/20 group-hover:text-[#16EC06] transition-colors duration-300"
+                  whileHover={{ scale: 1.15 }}
+                >
+                  {feature.icon}
+                </motion.div>
 
-              {/* Text */}
-              <h3 className="text-base font-semibold text-white">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
+                {/* Text */}
+                <h3 className="text-base font-semibold text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            </AnimateIn>
           ))}
         </div>
       </div>

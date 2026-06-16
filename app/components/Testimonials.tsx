@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import AnimateIn from "./AnimateIn";
+
 interface Testimonial {
   initials: string;
   avatarColor: string;
@@ -58,7 +63,7 @@ export default function Testimonials() {
     <section className="bg-[#0a0a0a] py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-16">
+        <AnimateIn className="flex flex-col items-center text-center gap-4 mb-16">
           <span className="text-xs font-semibold uppercase tracking-widest text-[#16EC06]">
             Testimonials
           </span>
@@ -69,37 +74,39 @@ export default function Testimonials() {
             From runners to researchers — WHOOP Health helps everyone
             understand their body better.
           </p>
-        </div>
+        </AnimateIn>
 
         {/* Testimonial cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="group bg-[#111111] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-5 hover:border-[#16EC06]/30 hover:-translate-y-1 transition-all duration-300"
-            >
-              {/* Stars */}
-              <StarRating />
+          {testimonials.map((t, index) => (
+            <AnimateIn key={t.name} delay={index * 0.15}>
+              <motion.div
+                className="group bg-[#111111] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-5 hover:border-[#16EC06]/30 transition-all duration-300"
+                whileHover={{ y: -4 }}
+              >
+                {/* Stars */}
+                <StarRating />
 
-              {/* Quote */}
-              <blockquote className="text-sm text-zinc-300 leading-relaxed flex-1">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
+                {/* Quote */}
+                <blockquote className="text-sm text-zinc-300 leading-relaxed flex-1">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
 
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-2 border-t border-[#2a2a2a]">
-                {/* Avatar */}
-                <div
-                  className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-black text-sm font-bold flex-shrink-0`}
-                >
-                  {t.initials}
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-2 border-t border-[#2a2a2a]">
+                  {/* Avatar */}
+                  <div
+                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-black text-sm font-bold flex-shrink-0`}
+                  >
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{t.name}</p>
+                    <p className="text-xs text-zinc-500">{t.role}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-zinc-500">{t.role}</p>
-                </div>
-              </div>
-            </div>
+              </motion.div>
+            </AnimateIn>
           ))}
         </div>
       </div>

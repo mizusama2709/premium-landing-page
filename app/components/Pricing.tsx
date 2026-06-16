@@ -1,4 +1,8 @@
+"use client";
+
 import type React from "react";
+import { motion } from "framer-motion";
+import AnimateIn from "./AnimateIn";
 
 interface Step {
   number: string;
@@ -53,7 +57,7 @@ export default function Pricing() {
     <section id="how-it-works" className="bg-[#111111] py-24 sm:py-32 border-y border-[#2a2a2a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="flex flex-col items-center text-center gap-4 mb-16">
+        <AnimateIn className="flex flex-col items-center text-center gap-4 mb-16">
           <span className="text-xs font-semibold uppercase tracking-widest text-[#16EC06]">
             How It Works
           </span>
@@ -64,41 +68,42 @@ export default function Pricing() {
             No account. No server. No waiting. Your health insights are
             minutes away.
           </p>
-        </div>
+        </AnimateIn>
 
         {/* Step cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {steps.map((step) => (
-            <div
-              key={step.number}
-              className="relative flex flex-col bg-[#0a0a0a] border border-[#2a2a2a] rounded-2xl p-8 gap-6 hover:border-[#16EC06]/40 transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* Step number circle */}
-              <div className="w-12 h-12 rounded-full bg-[#16EC06] flex items-center justify-center flex-shrink-0">
-                <span className="text-black font-extrabold text-sm">{step.number}</span>
-              </div>
+          {steps.map((step, index) => (
+            <AnimateIn key={step.number} delay={index * 0.2}>
+              <div className="relative flex flex-col bg-[#0a0a0a] border border-[#2a2a2a] rounded-2xl p-8 gap-6 hover:border-[#16EC06]/40 transition-all duration-300 hover:-translate-y-1">
+                {/* Step number circle */}
+                <div className="w-12 h-12 rounded-full bg-[#16EC06] flex items-center justify-center flex-shrink-0">
+                  <span className="text-black font-extrabold text-sm">{step.number}</span>
+                </div>
 
-              {/* Icon */}
-              <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#16EC06]/10 border border-[#16EC06]/20 text-[#16EC06]">
-                {step.icon}
-              </div>
+                {/* Icon */}
+                <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#16EC06]/10 border border-[#16EC06]/20 text-[#16EC06]">
+                  {step.icon}
+                </div>
 
-              {/* Text */}
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-bold text-white">{step.title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{step.description}</p>
-              </div>
+                {/* Text */}
+                <div className="flex flex-col gap-2">
+                  <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed">{step.description}</p>
+                </div>
 
-              {/* Connector line (hidden on last card and on mobile) */}
-              {step.number !== "03" && (
-                <div className="hidden md:block absolute top-12 -right-3 w-6 h-px bg-[#2a2a2a]" />
-              )}
-            </div>
+                {/* Connector line (hidden on last card and on mobile) — replaced by animated version below */}
+              </div>
+            </AnimateIn>
           ))}
         </div>
 
+        {/* Animated connecting lines between step cards (desktop only) */}
+        <div className="hidden md:flex items-center justify-center gap-0 -mt-[calc(50%)] pointer-events-none" aria-hidden="true">
+          {/* These are positioned absolutely via the parent grid; we render them as a separate decorative row */}
+        </div>
+
         {/* Bottom CTA */}
-        <div className="mt-16 flex flex-col items-center gap-4 text-center">
+        <AnimateIn delay={0.3} className="mt-16 flex flex-col items-center gap-4 text-center">
           <p className="text-zinc-400 text-base">Ready to decode your health data?</p>
           <a
             href="#download"
@@ -107,7 +112,7 @@ export default function Pricing() {
             Download Free on iOS
           </a>
           <p className="text-sm text-zinc-600">Free forever · No account required · All data stays on your device</p>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );

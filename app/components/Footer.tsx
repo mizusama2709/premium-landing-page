@@ -1,3 +1,7 @@
+"use client";
+
+import AnimateIn from "./AnimateIn";
+
 interface FooterLink {
   label: string;
   href: string;
@@ -87,18 +91,18 @@ export default function Footer() {
         {/* Top section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div className="flex flex-col gap-4 md:col-span-1">
+          <AnimateIn delay={0} className="flex flex-col gap-4 md:col-span-1">
             <span className="text-xl font-bold text-white">
               WHOOP Health
             </span>
             <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
               Health data insights. On-device. Private.
             </p>
-          </div>
+          </AnimateIn>
 
           {/* Link columns */}
-          {columns.map((col) => (
-            <div key={col.heading} className="flex flex-col gap-4">
+          {columns.map((col, index) => (
+            <AnimateIn key={col.heading} delay={(index + 1) * 0.1} className="flex flex-col gap-4">
               <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400">
                 {col.heading}
               </h4>
@@ -114,7 +118,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </AnimateIn>
           ))}
         </div>
 
