@@ -8,28 +8,28 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    initials: "SK",
-    avatarColor: "from-indigo-500 to-violet-500",
-    name: "Sarah Kim",
-    role: "CTO at Luminary",
+    initials: "AR",
+    avatarColor: "from-[#16EC06] to-[#0093E7]",
+    name: "Alex R.",
+    role: "Marathon Runner",
     quote:
-      "PremiumApp cut our time-to-launch in half. The integrations are seamless and the support team is genuinely world-class. We couldn't imagine shipping without it.",
+      "Finally understand why some days feel harder than others. The recovery score nails it every time.",
   },
   {
-    initials: "MR",
-    avatarColor: "from-violet-500 to-purple-500",
-    name: "Marcus Reid",
-    role: "Founder at Stackly",
+    initials: "MT",
+    avatarColor: "from-[#0093E7] to-[#7BA0FF]",
+    name: "Maya T.",
+    role: "Personal Trainer",
     quote:
-      "We evaluated five platforms and nothing came close. The real-time analytics alone have driven a 30% increase in our activation rate in just 60 days.",
+      "I use it with all my clients. The HRV trends alone are worth it. And it's free — no subscription nonsense.",
   },
   {
-    initials: "AP",
-    avatarColor: "from-purple-500 to-pink-500",
-    name: "Anika Patel",
-    role: "Head of Engineering at NovaTech",
+    initials: "JK",
+    avatarColor: "from-[#7BA0FF] to-[#16EC06]",
+    name: "James K.",
+    role: "Sleep Researcher",
     quote:
-      "Security was our biggest concern switching platforms. PremiumApp's zero-trust architecture and SOC 2 compliance gave our board immediate confidence.",
+      "The sleep stage breakdown is surprisingly accurate compared to my lab equipment. Impressive for a free app.",
   },
 ];
 
@@ -55,19 +55,19 @@ function StarRating() {
 
 export default function Testimonials() {
   return (
-    <section className="bg-zinc-950 py-24 sm:py-32">
+    <section className="bg-[#0a0a0a] py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#16EC06]">
             Testimonials
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Loved by builders
+            Loved by health-conscious people
           </h2>
           <p className="text-lg text-zinc-400 max-w-xl">
-            Thousands of teams trust PremiumApp to power their most important
-            products.
+            From runners to researchers — WHOOP Health helps everyone
+            understand their body better.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="group bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col gap-5 hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300"
+              className="group bg-[#111111] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-5 hover:border-[#16EC06]/30 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Stars */}
               <StarRating />
@@ -87,10 +87,10 @@ export default function Testimonials() {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center gap-3 pt-2 border-t border-zinc-800">
+              <div className="flex items-center gap-3 pt-2 border-t border-[#2a2a2a]">
                 {/* Avatar */}
                 <div
-                  className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-white text-sm font-bold flex-shrink-0`}
+                  className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-black text-sm font-bold flex-shrink-0`}
                 >
                   {t.initials}
                 </div>

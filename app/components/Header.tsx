@@ -7,18 +7,19 @@ export default function Header() {
 
   const navLinks = [
     { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "About", href: "#about" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Privacy", href: "#privacy" },
+    { label: "Download", href: "#download" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-[#2a2a2a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              PremiumApp
+            <span className="text-xl font-bold text-white">
+              WHOOP Health
             </span>
           </a>
 
@@ -38,10 +39,10 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
             <a
-              href="#pricing"
-              className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-indigo-500 to-violet-500 text-white hover:from-indigo-400 hover:to-violet-400 transition-all duration-200 shadow-lg shadow-indigo-500/25"
+              href="#download"
+              className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold bg-[#16EC06] text-black hover:bg-[#00cc00] transition-all duration-200 shadow-lg shadow-[#16EC06]/25"
             >
-              Get Started
+              Get the App
             </a>
           </div>
 
@@ -88,7 +89,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-zinc-800 bg-zinc-950">
+        <div className="md:hidden border-t border-[#2a2a2a] bg-zinc-950">
           <div className="px-4 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -101,11 +102,11 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#pricing"
+              href="#download"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-indigo-500 to-violet-500 text-white hover:from-indigo-400 hover:to-violet-400 transition-all duration-200 mt-2"
+              className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-[#16EC06] text-black hover:bg-[#00cc00] transition-all duration-200 mt-2"
             >
-              Get Started
+              Get the App
             </a>
           </div>
         </div>

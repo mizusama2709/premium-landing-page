@@ -10,88 +10,84 @@ const features: Feature[] = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        <polyline points="8 12 10 14 16 8" />
+      </svg>
+    ),
+    title: "Recovery Score",
+    description:
+      "Daily 0-100 recovery score derived from HRV and resting heart rate. Know exactly when to push and when to rest.",
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    ),
+    title: "Sleep Analytics",
+    description:
+      "Track sleep stages — Deep, REM, Light, and Awake — across 14 nights of history. See your sleep debt and performance score.",
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    title: "Fast Performance",
+    title: "Strain Tracking",
     description:
-      "Sub-100ms response times globally with edge-optimized infrastructure and intelligent caching built in from day one.",
+      "0-21 strain scale measuring cardiovascular load. Understand how hard your body is working day to day.",
   },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
       </svg>
     ),
-    title: "Secure by Default",
+    title: "HRV Trends",
     description:
-      "SOC 2 Type II certified with end-to-end encryption, zero-trust architecture, and automatic vulnerability scanning.",
+      "7, 30, and 90-day trend charts for HRV, recovery, strain, and sleep. Spot patterns that matter.",
   },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="18" cy="18" r="3" />
-        <circle cx="6" cy="6" r="3" />
-        <path d="M13 6h3a2 2 0 0 1 2 2v7" />
-        <line x1="6" y1="9" x2="6" y2="21" />
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="17 8 12 3 7 8" />
+        <line x1="12" y1="3" x2="12" y2="15" />
       </svg>
     ),
-    title: "Easy Integration",
+    title: "Apple Health Import",
     description:
-      "Connect to 50+ tools in minutes with our plug-and-play SDK, REST API, and webhooks — no boilerplate required.",
+      "Import your Apple Health export.zip — even 400MB+ files — with a streaming parser that never crashes your phone.",
   },
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
       </svg>
     ),
-    title: "Real-time Analytics",
+    title: "Total Privacy",
     description:
-      "Live dashboards with actionable insights, funnel analysis, cohort tracking, and custom event reporting.",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-    title: "Team Collaboration",
-    description:
-      "Role-based access, shared workspaces, audit logs, and real-time multiplayer editing for teams of any size.",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      </svg>
-    ),
-    title: "24/7 Support",
-    description:
-      "Dedicated support engineers, live chat, priority ticketing, and a comprehensive knowledge base — always on.",
+      "All data processed on-device. No account. No server. No subscription. Your health data stays yours.",
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="bg-zinc-950 py-24 sm:py-32">
+    <section id="features" className="bg-[#0a0a0a] py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#16EC06]">
             Features
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Everything you need
+            Everything your health data deserves
           </h2>
           <p className="text-lg text-zinc-400 max-w-2xl">
-            One platform. All the tools your team needs to move fast, stay
-            secure, and scale with confidence.
+            Six powerful views. One beautiful dashboard. All on your device —
+            no account, no subscription, no server.
           </p>
         </div>
 
@@ -100,13 +96,13 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col gap-4 hover:border-indigo-500/50 hover:bg-zinc-900/80 transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-[#111111] border border-[#2a2a2a] rounded-2xl p-6 flex flex-col gap-4 hover:border-[#16EC06]/50 hover:bg-[#111111]/80 transition-all duration-300 hover:-translate-y-1"
             >
               {/* Hover glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-600/5 to-violet-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#16EC06]/5 to-[#7BA0FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
               {/* Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500/20 group-hover:text-indigo-300 transition-colors duration-300">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#16EC06]/10 border border-[#16EC06]/20 text-[#16EC06] group-hover:bg-[#16EC06]/20 group-hover:text-[#16EC06] transition-colors duration-300">
                 {feature.icon}
               </div>
 

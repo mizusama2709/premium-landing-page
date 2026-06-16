@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PremiumApp — Launch, Grow, and Scale Faster",
+  title: "WHOOP Health — Apple Health Dashboard",
   description:
-    "The all-in-one platform to launch, grow, and scale your product — faster than ever.",
+    "Visualize your Apple Health data as recovery, strain, sleep, and HRV metrics. On-device. Private. Beautiful.",
 };
 
 export default function RootLayout({

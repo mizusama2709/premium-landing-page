@@ -1,169 +1,112 @@
-interface PricingTier {
-  name: string;
-  price: string;
-  period?: string;
+import type React from "react";
+
+interface Step {
+  number: string;
+  title: string;
   description: string;
-  features: string[];
-  cta: string;
-  highlighted: boolean;
+  icon: React.ReactNode;
 }
 
-const tiers: PricingTier[] = [
+const steps: Step[] = [
   {
-    name: "Starter",
-    price: "$9",
-    period: "/mo",
-    description: "Perfect for indie makers and small projects just getting off the ground.",
-    features: [
-      "Up to 3 projects",
-      "5,000 monthly events",
-      "Basic analytics",
-      "Email support",
-      "1 team member",
-      "API access",
-    ],
-    cta: "Get Started",
-    highlighted: false,
+    number: "01",
+    title: "Export from Apple Health",
+    description:
+      "Open the Health app → your profile → Export All Health Data. This creates a .zip file with all your data.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      </svg>
+    ),
   },
   {
-    name: "Pro",
-    price: "$29",
-    period: "/mo",
-    description: "For growing teams that need more power, speed, and collaboration.",
-    features: [
-      "Unlimited projects",
-      "500K monthly events",
-      "Advanced analytics",
-      "Priority support",
-      "Up to 10 team members",
-      "Webhooks & integrations",
-      "Custom dashboards",
-      "SSO (SAML)",
-    ],
-    cta: "Start Free Trial",
-    highlighted: true,
+    number: "02",
+    title: "Import into WHOOP Health",
+    description:
+      "Open WHOOP Health, tap Import, and select your export.zip. Our streaming parser handles even the largest files.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="17 8 12 3 7 8" />
+        <line x1="12" y1="3" x2="12" y2="15" />
+      </svg>
+    ),
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    description: "Tailored solutions for large organizations with security and compliance needs.",
-    features: [
-      "Unlimited everything",
-      "Dedicated infrastructure",
-      "SLA guarantee (99.99%)",
-      "24/7 phone support",
-      "Unlimited team members",
-      "Custom integrations",
-      "SOC 2 reports",
-      "HIPAA compliance",
-    ],
-    cta: "Contact Sales",
-    highlighted: false,
+    number: "03",
+    title: "See your dashboard",
+    description:
+      "Your recovery score, sleep analytics, strain, and HRV trends appear instantly — all analyzed on your device.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+        <polyline points="7 10 10 7 13 10 17 6" />
+      </svg>
+    ),
   },
 ];
 
-function CheckIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="text-indigo-400 flex-shrink-0"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
-
 export default function Pricing() {
   return (
-    <section id="pricing" className="bg-zinc-900 py-24 sm:py-32 border-y border-zinc-800">
+    <section id="how-it-works" className="bg-[#111111] py-24 sm:py-32 border-y border-[#2a2a2a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
-            Pricing
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#16EC06]">
+            How It Works
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Simple, transparent pricing
+            Up and running in 3 steps
           </h2>
           <p className="text-lg text-zinc-400 max-w-xl">
-            No hidden fees. No surprises. Start free, scale as you grow.
+            No account. No server. No waiting. Your health insights are
+            minutes away.
           </p>
         </div>
 
-        {/* Tier cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier) => (
+        {/* Step cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {steps.map((step) => (
             <div
-              key={tier.name}
-              className={`relative flex flex-col rounded-2xl border p-8 gap-6 transition-all duration-300 ${
-                tier.highlighted
-                  ? "bg-gradient-to-b from-indigo-950/60 to-zinc-950 border-indigo-500/50 shadow-2xl shadow-indigo-500/20 scale-[1.03]"
-                  : "bg-zinc-950 border-zinc-800 hover:border-zinc-700"
-              }`}
+              key={step.number}
+              className="relative flex flex-col bg-[#0a0a0a] border border-[#2a2a2a] rounded-2xl p-8 gap-6 hover:border-[#16EC06]/40 transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Most Popular badge */}
-              {tier.highlighted && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-indigo-500 to-violet-500 text-white shadow-lg shadow-indigo-500/30 whitespace-nowrap">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
-              {/* Header */}
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-bold text-white">{tier.name}</h3>
-                <div className="flex items-end gap-1">
-                  <span
-                    className={`text-4xl font-extrabold ${
-                      tier.highlighted
-                        ? "bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent"
-                        : "text-white"
-                    }`}
-                  >
-                    {tier.price}
-                  </span>
-                  {tier.period && (
-                    <span className="text-zinc-500 text-sm mb-1">{tier.period}</span>
-                  )}
-                </div>
-                <p className="text-sm text-zinc-400 leading-relaxed">{tier.description}</p>
+              {/* Step number circle */}
+              <div className="w-12 h-12 rounded-full bg-[#16EC06] flex items-center justify-center flex-shrink-0">
+                <span className="text-black font-extrabold text-sm">{step.number}</span>
               </div>
 
-              {/* CTA */}
-              <a
-                href="#"
-                className={`w-full inline-flex items-center justify-center py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
-                  tier.highlighted
-                    ? "bg-gradient-to-r from-indigo-500 to-violet-500 text-white hover:from-indigo-400 hover:to-violet-400 shadow-lg shadow-indigo-500/25"
-                    : "border border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:text-white hover:bg-zinc-800/50"
-                }`}
-              >
-                {tier.cta}
-              </a>
+              {/* Icon */}
+              <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#16EC06]/10 border border-[#16EC06]/20 text-[#16EC06]">
+                {step.icon}
+              </div>
 
-              {/* Divider */}
-              <div className="border-t border-zinc-800" />
+              {/* Text */}
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{step.description}</p>
+              </div>
 
-              {/* Feature list */}
-              <ul className="flex flex-col gap-3">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5">
-                    <CheckIcon />
-                    <span className="text-sm text-zinc-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Connector line (hidden on last card and on mobile) */}
+              {step.number !== "03" && (
+                <div className="hidden md:block absolute top-12 -right-3 w-6 h-px bg-[#2a2a2a]" />
+              )}
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 flex flex-col items-center gap-4 text-center">
+          <p className="text-zinc-400 text-base">Ready to decode your health data?</p>
+          <a
+            href="#download"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-base font-semibold bg-[#16EC06] text-black hover:bg-[#00cc00] transition-all duration-200 shadow-xl shadow-[#16EC06]/30 hover:-translate-y-0.5"
+          >
+            Download Free on iOS
+          </a>
+          <p className="text-sm text-zinc-600">Free forever · No account required · All data stays on your device</p>
         </div>
       </div>
     </section>

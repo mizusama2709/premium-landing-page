@@ -58,7 +58,7 @@ export default function ContactSection() {
               value={form.name}
               onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
               required
-              className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-[#16EC06] focus:ring-1 focus:ring-[#16EC06]"
             />
           </div>
 
@@ -71,7 +71,7 @@ export default function ContactSection() {
               value={form.email}
               onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
               required
-              className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-[#16EC06] focus:ring-1 focus:ring-[#16EC06]"
             />
           </div>
 
@@ -84,14 +84,14 @@ export default function ContactSection() {
               value={form.message}
               onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
               required
-              className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none"
+              className="rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3 text-white placeholder-zinc-600 outline-none transition focus:border-[#16EC06] focus:ring-1 focus:ring-[#16EC06] resize-none"
             />
           </div>
 
           <button
             type="submit"
             disabled={status.type === "loading"}
-            className="rounded-lg bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60"
+            className="rounded-lg bg-[#16EC06] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#00cc00] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status.type === "loading" ? "Sending…" : "Send message"}
           </button>

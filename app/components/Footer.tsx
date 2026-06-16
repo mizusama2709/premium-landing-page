@@ -10,26 +10,27 @@ interface FooterColumn {
 
 const columns: FooterColumn[] = [
   {
-    heading: "Product",
+    heading: "App",
     links: [
       { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Changelog", href: "#" },
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "Privacy", href: "#privacy" },
     ],
   },
   {
-    heading: "Company",
+    heading: "Platform",
     links: [
-      { label: "About", href: "#about" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "iOS", href: "#" },
+      { label: "Apple Health", href: "#" },
+      { label: "HealthKit", href: "#" },
     ],
   },
   {
-    heading: "Legal",
+    heading: "Support",
     links: [
-      { label: "Privacy", href: "#" },
-      { label: "Terms", href: "#" },
+      { label: "Contact", href: "#" },
+      { label: "GitHub", href: "#" },
+      { label: "Feedback", href: "#" },
     ],
   },
 ];
@@ -81,18 +82,17 @@ function LinkedInIcon() {
 
 export default function Footer() {
   return (
-    <footer id="about" className="bg-zinc-950 border-t border-zinc-800">
+    <footer id="privacy" className="bg-[#0a0a0a] border-t border-[#2a2a2a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Top section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="flex flex-col gap-4 md:col-span-1">
-            <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              PremiumApp
+            <span className="text-xl font-bold text-white">
+              WHOOP Health
             </span>
             <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
-              The all-in-one platform to launch, grow, and scale your product
-              — faster than ever.
+              Health data insights. On-device. Private.
             </p>
           </div>
 
@@ -119,9 +119,9 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-zinc-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-[#2a2a2a] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-zinc-600">
-            &copy; 2026 PremiumApp. All rights reserved.
+            &copy; 2026 WHOOP Health. All rights reserved.
           </p>
 
           {/* Social icons */}
