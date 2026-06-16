@@ -97,11 +97,6 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Animated connecting lines between step cards (desktop only) */}
-        <div className="hidden md:flex items-center justify-center gap-0 -mt-[calc(50%)] pointer-events-none" aria-hidden="true">
-          {/* These are positioned absolutely via the parent grid; we render them as a separate decorative row */}
-        </div>
-
         {/* Bottom CTA */}
         <AnimateIn delay={0.3} className="mt-16 flex flex-col items-center gap-4 text-center">
           <p className="text-zinc-400 text-base">Ready to decode your health data?</p>
